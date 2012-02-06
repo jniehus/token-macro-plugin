@@ -4,6 +4,8 @@ import hudson.Extension;
 import hudson.model.AbstractBuild;
 import hudson.model.TaskListener;
 import hudson.remoting.Callable;
+import java.io.Closeable;
+import java.io.Reader;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;

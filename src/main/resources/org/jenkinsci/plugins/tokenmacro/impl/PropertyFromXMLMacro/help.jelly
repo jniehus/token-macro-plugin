@@ -1,0 +1,6 @@
+<j:jelly xmlns:j="jelly:core">
+  <dt>$${XML,file="FILENAME",xpath="Expression"}</dt>
+  <dd>
+    Expands to the value from a xpath expression applied to an XML file. The filename is relative to the build workspace root.
+  </dd>
+</j:jelly>

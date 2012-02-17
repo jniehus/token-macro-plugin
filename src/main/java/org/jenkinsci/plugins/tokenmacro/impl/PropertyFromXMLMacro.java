@@ -75,23 +75,23 @@ public class PropertyFromXMLMacro extends DataBoundTokenMacro {
                     xpathResult = xpathResult.substring(0, xpathResult.length() - 1); // trim the last ';'
                 }
                 catch (IOException e) {
-                    xpathResult = "Error reading ".concat(filename);
+                    xpathResult = "Error: ".concat(filename).concat(" - Could not read.");
                 }
                 catch (XPathExpressionException e) {
-                    xpathResult = "Xpath Expression invalid: ".concat(xpathexpression);
+                    xpathResult = "Error: ".concat(xpathexpression).concat(" - Invalid syntax or path.");
                 }
                 catch (ParserConfigurationException e) {
-                    xpathResult = "XML not well formed in: ".concat(filename);
+                    xpathResult = "Error: ".concat(filename).concat(" - XML not well formed.");
                 }
                 catch (SAXException e) {
-                    xpathResult = "XML not well formed in: ".concat(filename);
+                    xpathResult = "Error: ".concat(filename).concat(" - XML not well formed.");
                 }
                 catch (Exception e) {
-                    xpathResult = "Error reading ".concat(filename).concat(". ").concat(xpathexpression).concat(" is probably invalid.");
+                    xpathResult = "Error: ".concat(filename).concat(" - '").concat(xpathexpression).concat("' invalid syntax or path maybe?");
                 }
             }
             else {
-                xpathResult = filename.concat(" not found");
+                xpathResult = "Error: ".concat(filename).concat(" not found");
             }
             
             return xpathResult;

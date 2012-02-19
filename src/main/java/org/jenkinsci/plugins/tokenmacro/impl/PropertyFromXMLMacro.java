@@ -75,15 +75,12 @@ public class PropertyFromXMLMacro extends DataBoundTokenMacro {
                     xpathResult = xpathResult.substring(0, xpathResult.length() - 1); // trim the last ';'
                 }
                 catch (IOException e) {
-                    System.err.println(e.getMessage());
                     xpathResult = "Error: ".concat(filename).concat(" - Could not read.");
                 }
                 catch (SAXException e) {
-                    System.err.println(e.getMessage());
                     xpathResult = "Error: ".concat(filename).concat(" - XML not well formed.");
                 }
                 catch (Exception e) {
-                    System.err.println(e.getMessage());
                     xpathResult = "Error: ".concat(filename).concat(" - '").concat(xpathexpression).concat("' invalid syntax or path maybe?");
                 }
             }
